@@ -2464,21 +2464,21 @@ public class CNMining
 		do
 		{
 			ObjectCursor<Node> np = (ObjectCursor)localIterator1.next();
-					       
-			localIterator2 = graph.adjacentNodes((Node)np.value).iterator(); 
+			Node temp5 = (Node)np.value;		       
+			localIterator2 = graph.adjacentNodes(temp5).iterator(); 
 			ObjectCursor<Node> nr = (ObjectCursor)localIterator2.next();
 			
                        		       
 			boolean b = bfs(graph, (Node)np.value, (Node)np.value, null, null);
 			if (b)
 			{	
-                                Node tempo3 =(Node)np.value;
-                                Node temp5 = (Node)np.value;
+                                
+                                
                                 Node temp6 = (Node)nr.value;
 				boolean vincoli_soddisfatti = verificaVincoliPositivi(
 					folded_g, 
 					folded_g.getNode((temp5).getNomeAttivita().split("#")[0],
-					folded_map.get((tempo3).getNomeAttivita().split("#")[0])), 
+					folded_map.get((temp5).getNomeAttivita().split("#")[0])), 
 					folded_g.getNode((temp6).getNomeAttivita().split("#")[0], 
 					folded_map.get((temp6).getNomeAttivita().split("#")[0])), vincoli_positivi, folded_map);
 					         
