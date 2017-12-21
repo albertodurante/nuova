@@ -2482,7 +2482,7 @@ public class CNMining
 					         
 					if (vincoli_soddisfatti)
 					{
-						lista_attivita_parallele.add(new FakeDependency(((Node)np.value).getID_attivita(), ((Node)nr.value).getID_attivita()));
+						lista_attivita_parallele.add(new FakeDependency((temp5).getID_attivita(), (temp6).getID_attivita()));
 					}
 			}
 					       
@@ -2652,9 +2652,10 @@ public class CNMining
                                         Node temp11 = (Node)n.value;
 					if (bfs(folded_g, (temp11), x, null, null))
 					{
+                                            Constraint tempo = (Constraint)cpn.value;
 						for (ObjectCursor<Constraint> cpn : vincoli_negati) {
-							if ((((Constraint)cpn.value).isPathConstraint()) && 
-								(((Constraint)cpn.value).getBodyList().contains((temp11).getNomeAttivita().split("#")[0])) && (((Constraint)cpn.value).getHeadList().contains(((String)attivita_w.value).split("#")[0])))
+							if (((tempo).isPathConstraint()) && 
+								((tempo).getBodyList().contains((temp11).getNomeAttivita().split("#")[0])) && ((tempo).getHeadList().contains(((String)attivita_w.value).split("#")[0])))
 							{
 								violations_counter++; 
 							}
