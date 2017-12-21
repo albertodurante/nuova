@@ -2472,11 +2472,12 @@ public class CNMining
 			if (b)
 			{	
                                 Node temp5 = (Node)np.value;
+				Node tempo3 = temp5;
                                 Node temp6 = (Node)nr.value;
 				boolean vincoli_soddisfatti = verificaVincoliPositivi(
 					folded_g, 
-					folded_g.getNode((temp5).getNomeAttivita().split("#")[0], 
-					folded_map.get((temp5).getNomeAttivita().split("#")[0])), 
+					folded_g.getNode((tempo3).getNomeAttivita().split("#")[0], 
+					folded_map.get((tempo3).getNomeAttivita().split("#")[0])), 
 					folded_g.getNode((temp6).getNomeAttivita().split("#")[0], 
 					folded_map.get((temp6).getNomeAttivita().split("#")[0])), vincoli_positivi, folded_map);
 					         
