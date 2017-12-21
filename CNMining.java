@@ -2467,16 +2467,17 @@ public class CNMining
 					       
 			localIterator2 = graph.adjacentNodes((Node)np.value).iterator(); 
 			ObjectCursor<Node> nr = (ObjectCursor)localIterator2.next();
-			Node temp5 = (Node)np.value;	       
-			boolean b = bfs(graph, (temp5), (temp5), null, null);
+			
+                       		       
+			boolean b = bfs(graph, (Node)np.value, (Node)np.value, null, null);
 			if (b)
 			{	
+                                Node tempo3 =(Node)np.value;
                                 Node temp5 = (Node)np.value;
-				Node tempo3 = temp5;
                                 Node temp6 = (Node)nr.value;
 				boolean vincoli_soddisfatti = verificaVincoliPositivi(
 					folded_g, 
-					folded_g.getNode((tempo3).getNomeAttivita().split("#")[0], 
+					folded_g.getNode((temp5).getNomeAttivita().split("#")[0],
 					folded_map.get((tempo3).getNomeAttivita().split("#")[0])), 
 					folded_g.getNode((temp6).getNomeAttivita().split("#")[0], 
 					folded_map.get((temp6).getNomeAttivita().split("#")[0])), vincoli_positivi, folded_map);
@@ -2539,8 +2540,8 @@ public class CNMining
 					{
 						for (Object cpn : vincoli_negati) {
                                                    ObjectCursor temp9 =((ObjectCursor)cpn).value;
-							Constraint tempo2 = (COnstraint)temp9;
-							if (((Constraint)temp9).isPathConstraint())
+                                                   Constraint tempo2 = (Constraint)temp9;
+							if ((tempo2).isPathConstraint())
 							{
 								if (((tempo2).getBodyList().contains(((Node)((ObjectCursor<Node>)n).value).getNomeAttivita().split("#")[0])) && ((tempo2).getHeadList().contains(ny.getNomeAttivita().split("#")[0])))
 								{
