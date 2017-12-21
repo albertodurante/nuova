@@ -2469,7 +2469,7 @@ public class CNMining
 			ObjectCursor<Node> nr = (ObjectCursor)localIterator2.next();
 			
                        		       
-			boolean b = bfs(graph, (Node)np.value, (Node)np.value, null, null);
+			boolean b = bfs(graph, temp5, temp5, null, null);
 			if (b)
 			{	
                                 
