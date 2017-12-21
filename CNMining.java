@@ -2538,9 +2538,10 @@ public class CNMining
 					{
 						for (Object cpn : vincoli_negati) {
                                                    ObjectCursor temp9 =((ObjectCursor)cpn).value;
+							Constraint tempo2 = (COnstraint)temp9;
 							if (((Constraint)temp9).isPathConstraint())
 							{
-								if ((((Constraint)temp9).getBodyList().contains(((Node)((ObjectCursor<Node>)n).value).getNomeAttivita().split("#")[0])) && (((Constraint)temp9).getHeadList().contains(ny.getNomeAttivita().split("#")[0])))
+								if (((tempo2).getBodyList().contains(((Node)((ObjectCursor<Node>)n).value).getNomeAttivita().split("#")[0])) && ((tempo2).getHeadList().contains(ny.getNomeAttivita().split("#")[0])))
 								{
 									violations_counter++; } }
 								}
