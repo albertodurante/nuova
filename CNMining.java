@@ -697,8 +697,9 @@ public class CNMining
 		}
 		
 		for (ObjectCursor<Node> n1 : startActs) {
-			if (((Node)n1.value).getOuter_degree() > 0) {
-				Node cn = cleanG.getNode(((Node)n1.value).getNomeAttivita(), folded_map.get(((Node)n1.value).getNomeAttivita()));
+			Node temp1 = (Node)n1.value;		
+			if ((temp1).getOuter_degree() > 0) {
+				Node cn = cleanG.getNode((temp1).getNomeAttivita(), folded_map.get((temp1).getNomeAttivita()));
 				startActivities.add(cn);
 			}
 		}
