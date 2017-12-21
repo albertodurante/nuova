@@ -2065,15 +2065,16 @@ public class CNMining
 				if (((Constraint)c.value).getHeadList().contains(unfolded_head.split("#")[0]))
 				{
 					Constraint unfolded_c = new Constraint();
-					           
-					unfolded_c.setConstraintType(((Constraint)c.value).isPositiveConstraint());
-					unfolded_c.setPathConstraint(((Constraint)c.value).isPathConstraint());
+					Constraint temp3 =(Constraint)c.value;          
+					unfolded_c.setConstraintType((temp3).isPositiveConstraint());
+					unfolded_c.setPathConstraint((temp3).isPathConstraint());
 					unfolded_c.addHead(unfolded_head);
 					           
 					for (int j = 0; j < map.allocated.length; j++) {
+						
 						if (map.allocated[j] != false) {
 							String unfolded_body = (String)keys[j];
-							if (((Constraint)c.value).getBodyList().contains(unfolded_body.split("#")[0]))
+							if ((temp3).getBodyList().contains(unfolded_body.split("#")[0]))
 								unfolded_c.addBody(unfolded_body);
 						}
 		           	}
