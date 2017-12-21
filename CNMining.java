@@ -2467,8 +2467,8 @@ public class CNMining
 					       
 			localIterator2 = graph.adjacentNodes((Node)np.value).iterator(); 
 			ObjectCursor<Node> nr = (ObjectCursor)localIterator2.next();
-					       
-			boolean b = bfs(graph, (Node)nr.value, (Node)np.value, null, null);
+			Node temp5 = (Node)np.value;	       
+			boolean b = bfs(graph, (temp5), (temp5), null, null);
 			if (b)
 			{	
                                 Node temp5 = (Node)np.value;
